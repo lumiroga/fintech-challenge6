@@ -2,21 +2,14 @@
 
 ---
 
-This is the 5th challenge, now for Financial Planning based on data taken from APIs and simulations
-The idea is to analyze and validate the different scenarios for a portfolio for a 10 year and 30 year horizon
+This is the 6th challenge, now for evaluating the housing market in San Fracisco
+For the analysis a better set of plotting tools, including geographic mapping tools, is used to have a better idea of the data and its patters across the time.
 
-The current portfolio contains a combination of the following componentns: 
+The data sources are the following
 
-- **STOCKs (ETF) $SPY (S&P 500 ETF)**            
-- **Bonds $AGG (Shares Core US Aggregate Bond ETF)**    
+- **San Francisco Neighborhoods list and coordinates**            
+- **Sales Price per square foot and Rent every year from 2010-2016 for every neighborhood**    
 - **Crypto Currencies (ETH & BTC)**    
-
-
-Information is obtained from the following APIs: 
-
-- [Alpaca API](https://alpaca.markets/)
-- [BTC Ticker](https://api.alternative.me/v2/ticker/Bitcoin/?convert=USD)
-- [ETH Ticker](https://api.alternative.me/v2/ticker/Ethereum/?convert=USD)
 
 ---
 
@@ -32,33 +25,14 @@ This modules creates a notebook and processes a python kernel.
 
 Library that handles Dataframes and Series to process data, filter, create statistics
 
-### matplotlib
+### hvplot
 
-Library to plot graphs
+Library to plot graphs, enhanced graphics and options
 
-### alpaca_trade_api
+### pathlib
 
-This is and SDK provided by Alpaca Markets to abstract the API logic into Python classes.
+Library for path logic and OS differences abstraction
 
-### dotenv
-
-Library used to load, read and process environment variable files.
-
-## json
-
-Library used to process JSON text coming from the APIs, also formats and reprocess JSONs to convert it into a Python Dictionary
-
-## requests
-
-Library to process HTTP Requests and send the different HTTP Requests methods,
-
-## os
-
-Library for Operating System functionalities, particularily, processing Environment variables into Python.
-
-## MCSimulation
-
-Custom made library provided by Columbia to generate a light Monte Carlo Simulation with common libraries (NumPy and Pandas)
 
 ---
 
@@ -67,7 +41,7 @@ Custom made library provided by Columbia to generate a light Monte Carlo Simulat
 To run program just open the terminal (anaconda needs to be installed) and type the following
 
 ``` bash
-$ git clone https://github.com/lumiroga/fintech-Challenge5.git
+$ git clone https://github.com/lumiroga/fintech-Challenge6.git
 $ cd fintech-Challenge5
 $ jupyter lab 
 
@@ -75,40 +49,24 @@ $ jupyter lab
 
 Open a browser with the displayed URL in Jupyter
 
-Look for *risk_return.ipnyb* file and open it.
+Look for *san_francisco_housing.ipnyb* file and open it.
 
 ---
-# Analysis Description -  Financial Planning
+# Graph Units per Year
 
-The process is divided into 2 parts, first analyzing the current value of the portfolio, getting the most recent data to calculate the values.
+The graph shows the amount of units in the city for each year
 
-## Get Emergency Fund
+# Graph Price per Square foot vs Monthly Rent
 
-Considering a monthly income of 12 thousand USD, an emergency fund should at least cover 3 months of income.
+The graph shows the price per square foot and rent for each year.
 
-### Get Current Values for Crypto Currency
+## Graph Price per Square foot grouped by Neighborhoods.
 
-Using API Alternative Ticker we get the latest values for ETH and BTC to calculate the current value in dollars for the given portfolio
+The graph shows the price per square foot and rent for each year with a widget to filter each specific neighborhood and compare the different trends between neighborhoods in an interactive way.
 
-### Get Current Values for Stocks and Bonds
+# Graph Price per square foot and montly rent in a map with neighborhood locations.
 
-Using Alpaca API we get the latest values for $AGG and $SPY to calculate the current value in dollars for the given portfolio
-
-## Evaluate Emergency Fund
-
-Check if the current value combining the Cryptocurrencies, Stocks and Bonds is enough for an emergency fund (3 months of income)
-
-## Financial Planner
-
-Using the MCForecastTools Library, we calculate the estimated value and expected value for the Stock and Bond portfolio
-
-### 30 Years Simulation
-
-The 30 years simulation gives an overall estimated value with 95% confidence of between $117k to $1.4M 
-
-### 10 year Simulation
-
-The 10 years simulation gives an overall estimated value with 95% confidence of between $71k to $435k 
+The graph shows the price per square foot and rent for each year with an interactive map where neighborhoods are mapped with coordinates and the size represents the price per square foot.
 
 ## Contributors
 

@@ -113,6 +113,7 @@ The 10 years simulation gives an overall estimated value with 95% confidence of 
 ## Contributors
 
 [lumiroga](https://github.com/lumiroga)
+[Stack overflow](https://stackoverflow.com/questions/59678780/show-extra-columns-when-hovering-in-a-scatter-plot-with-hvplot)
 
 ---
 
